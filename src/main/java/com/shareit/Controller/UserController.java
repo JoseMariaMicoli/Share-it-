@@ -24,7 +24,7 @@ public class UserController {
 		return userService.findAll();
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/user/create", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public String create(@RequestBody User user){
 		String userId = "";
@@ -40,7 +40,7 @@ public class UserController {
 		return "User succesfully created with id = " + userId;
 	}
 	
-	@RequestMapping("/delete/{id}")
+	@RequestMapping("/user/delete/{id}")
 	@ResponseBody
 	public String delete(@PathVariable Long id){
 		
@@ -55,7 +55,7 @@ public class UserController {
 		return "User succesfully deleted!";
 	}
 	
-	@RequestMapping("/get-by-email")
+	@RequestMapping("/user/get-by-email")
 	@ResponseBody
 	public String getByEmail(String email){
 		String userId = "";
@@ -71,7 +71,7 @@ public class UserController {
 		return "The user id is: " + userId;
 	}
 	
-	@RequestMapping("/update/{id}")
+	@RequestMapping("/user/update/{id}")
 	@ResponseBody
 	public String updateUser(@RequestBody User user, @PathVariable Long id){
 		
